@@ -1,0 +1,10 @@
+<launch>
+    <node pkg="xvfb" type="xvfb" name="xvfb" args=":99 -ac -screen 0 1280x1024x24"/>
+
+    <node pkg="turtlesim" type="turtlesim_node" name="sim" output="screen" launch-prefix="xvfb-run -s '-screen 0 1280x1024x24'"/>
+
+    <node name="turtle1_tf_broadcaster" pkg="octomap_server" type="tf_broadcaster.py" respawn="false" output="screen">
+        <param name="turtle" type="string" value="turtle1" />
+    </node>
+</launch>
+
