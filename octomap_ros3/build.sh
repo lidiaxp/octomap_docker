@@ -1,0 +1,1 @@
+docker build -t octomap-ros2:latest .
